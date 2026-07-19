@@ -1,0 +1,462 @@
+/*====================================
+   KAUSHAMBI EYE HOSPITAL
+   APPOINTMENT.CSS
+=====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#edf3ff;
+    color:#222;
+}
+
+.main{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:25px;
+}
+
+/*======================
+HEADER
+======================*/
+
+.page-header{
+    background:#fff;
+    border-radius:18px;
+    padding:25px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.page-header h1{
+    color:#165cc9;
+    font-size:44px;
+    font-weight:700;
+}
+
+.page-header h1 i{
+    margin-right:10px;
+}
+
+.page-header p{
+    margin-top:8px;
+    color:#666;
+    font-size:18px;
+}
+
+.header-date{
+    background:#165cc9;
+    color:#fff;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/*======================
+TOP CONTROLS
+======================*/
+
+.top-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.search-box{
+    flex:1;
+    position:relative;
+}
+
+.search-box i{
+    position:absolute;
+    left:16px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#165cc9;
+    font-size:20px;
+}
+
+.search-box input{
+    width:100%;
+    height:54px;
+    padding-left:48px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+.right-controls{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.right-controls select{
+    height:54px;
+    min-width:160px;
+    padding:0 15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+/*======================
+BUTTONS
+======================*/
+
+#refreshBtn,
+#addAppointmentBtn{
+    height:54px;
+    padding:0 22px;
+    border:none;
+    border-radius:10px;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#refreshBtn{
+    background:#198754;
+}
+
+#refreshBtn:hover{
+    background:#157347;
+}
+
+#addAppointmentBtn{
+    background:#165cc9;
+}
+
+#addAppointmentBtn:hover{
+    background:#0f4eb3;
+}
+
+#refreshBtn i,
+#addAppointmentBtn i{
+    margin-right:8px;
+}
+
+/*======================
+TABLE
+======================*/
+
+.table-container{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.table-container table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table-container thead{
+    background:#165cc9;
+}
+
+.table-container th{
+    color:#fff;
+    padding:18px 15px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+}
+
+.table-container td{
+    padding:18px 15px;
+    text-align:center;
+    border-bottom:1px solid #ececec;
+    font-size:15px;
+    vertical-align:middle;
+}
+
+.table-container tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.table-container tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/*======================
+STATUS
+======================*/
+
+.status-pending{
+    color:#ff9800;
+    font-weight:700;
+}
+
+.status-approved{
+    color:#198754;
+    font-weight:700;
+}
+
+.status-completed{
+    color:#165cc9;
+    font-weight:700;
+}
+
+.status-rejected{
+    color:#dc3545;
+    font-weight:700;
+}
+
+/*==========================
+TABLE
+==========================*/
+
+.table-container{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.table-container table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.table-container thead{
+    background:#165cc9;
+}
+
+.table-container th{
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.table-container td{
+    padding:18px 12px;
+    text-align:center;
+    border-bottom:1px solid #ececec;
+    font-size:15px;
+    vertical-align:middle;
+}
+
+.table-container tbody tr:hover{
+    background:#f5f9ff;
+}
+
+.table-container tbody tr:last-child td{
+    border-bottom:none;
+}
+
+/*==========================
+STATUS
+==========================*/
+
+.status-pending{
+    background:#fff3cd;
+    color:#856404;
+    padding:6px 14px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.status-approved{
+    background:#d4edda;
+    color:#155724;
+    padding:6px 14px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.status-completed{
+    background:#d1ecf1;
+    color:#0c5460;
+    padding:6px 14px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.status-rejected{
+    background:#f8d7da;
+    color:#721c24;
+    padding:6px 14px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    flex-wrap:nowrap;
+}
+
+.action-buttons button{
+    width:36px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    font-size:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+
+.action-buttons button:hover{
+    transform:scale(1.08);
+}
+
+/* Button Colors */
+
+.view-btn{
+    background:#17a2b8;
+}
+
+.approve-btn{
+    background:#198754;
+}
+
+.complete-btn{
+    background:#0d6efd;
+}
+
+.reject-btn{
+    background:#dc3545;
+}
+
+.edit-btn{
+    background:#fd7e14;
+}
+
+.print-btn{
+    background:#6f42c1;
+}
+
+.delete-btn{
+    background:#6c757d;
+}
+
+/*==========================
+PAGINATION
+==========================*/
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin:25px 0;
+}
+
+.pagination button{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:8px;
+    background:#165cc9;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+.pagination button.active{
+    background:#0b4ab0;
+}
+
+.pagination button:hover{
+    transform:translateY(-2px);
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media (max-width:992px){
+
+    .page-header,
+    .top-controls{
+        flex-direction:column;
+        align-items:stretch;
+        gap:15px;
+    }
+
+    .right-controls{
+        width:100%;
+        flex-wrap:wrap;
+    }
+
+    .right-controls select,
+    .right-controls button{
+        flex:1;
+        min-width:150px;
+    }
+
+    .table-container{
+        overflow-x:auto;
+    }
+
+    .table-container table{
+        min-width:900px;
+    }
+}
+
+@media (max-width:768px){
+
+    .main{
+        padding:15px;
+    }
+
+    .page-header h1{
+        font-size:30px;
+    }
+
+    .page-header p{
+        font-size:15px;
+    }
+
+    .header-date{
+        justify-content:center;
+    }
+
+    .search-box input{
+        height:50px;
+    }
+
+    .right-controls{
+        flex-direction:column;
+    }
+
+    .right-controls select,
+    .right-controls button{
+        width:100%;
+    }
+
+    .table-container table{
+        min-width:800px;
+    }
+}

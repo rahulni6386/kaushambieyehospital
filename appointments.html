@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Appointments | Kaushambi Eye Hospital</title>
+
+<link rel="stylesheet" href="appointments.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<!-- ================= Header ================= -->
+
+<div class="page-header">
+
+<div>
+
+<h1>
+<i class="fa-solid fa-calendar-check"></i>
+Appointments List Kaushambi Eye Hospital
+</h1>
+
+<p>
+Manage and Track All Patient Appointments
+</p>
+
+</div>
+
+<div class="header-date">
+
+<i class="fa-solid fa-calendar-days"></i>
+
+<span id="todayDate"></span>
+
+</div>
+
+</div>
+
+<!-- ================= Top Controls ================= -->
+
+<div class="top-controls">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="search"
+placeholder="Search by Patient Name, Mobile, Email...">
+
+</div>
+
+<div class="right-controls">
+
+<select id="statusFilter">
+
+<option value="All">All Status</option>
+<option value="Pending">Pending</option>
+<option value="Approved">Approved</option>
+<option value="Completed">Completed</option>
+<option value="Rejected">Rejected</option>
+
+</select>
+
+<button id="refreshBtn">
+
+<i class="fa-solid fa-rotate-right"></i>
+
+Refresh
+
+</button>
+
+<button id="addAppointmentBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Appointment
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= Appointment Table ================= -->
+
+<div class="table-container table-responsive">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Patient</th>
+
+<th>Contact</th>
+
+<th>Doctor</th>
+
+<th>Date & Time</th>
+
+<th>Status</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="appointmentTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= Pagination ================= -->
+
+<div class="pagination">
+
+<button>
+
+<i class="fa-solid fa-angle-left"></i>
+
+</button>
+
+<button class="active">1</button>
+
+<button>
+
+<i class="fa-solid fa-angle-right"></i>
+
+</button>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+
+<script>
+
+document.getElementById("todayDate").innerHTML =
+new Date().toLocaleDateString("en-GB",{
+day:"2-digit",
+month:"long",
+year:"numeric"
+});
+
+document.getElementById("refreshBtn").onclick=function(){
+
+location.reload();
+
+};
+
+document.getElementById("addAppointmentBtn").onclick=function(){
+
+window.location.href="index.html";
+
+};
+
+</script>
+
+</body>
+</html>

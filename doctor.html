@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Doctors | Kaushambi Eye Hospital</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="doctor.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <h2>KEH Admin</h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Appointments
+            </a>
+        </li>
+
+        <li>
+            <a href="patients.html">
+                <i class="fa-solid fa-user-injured"></i>
+                Patients
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="doctor.html">
+                <i class="fa-solid fa-user-doctor"></i>
+                Doctors
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <!-- ================= Header ================= -->
+
+<div class="page-header">
+
+    <div>
+
+        <h1>
+            <i class="fa-solid fa-user-doctor"></i>
+            Doctors Management
+        </h1>
+
+        <p>
+            Manage All Doctors of Kaushambi Eye Hospital
+        </p>
+
+    </div>
+
+    <div class="header-date">
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        <span id="todayDate"></span>
+
+    </div>
+
+</div>
+
+<!-- ================= Controls ================= -->
+
+<div class="top-controls">
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="searchDoctor"
+            placeholder="Search Doctor Name, Mobile, Email...">
+
+    </div>
+
+    <div class="right-controls">
+
+        <button id="refreshDoctorBtn">
+
+            <i class="fa-solid fa-rotate-right"></i>
+
+            Refresh
+
+        </button>
+
+        <button id="addDoctorBtn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Doctor
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= Doctors Table ================= -->
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Doctor Name</th>
+<th>Specialization</th>
+<th>Degree</th>
+<th>Mobile</th>
+<th>Email</th>
+<th>Timing</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="doctorTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- ================= Add Doctor Modal ================= -->
+
+<div id="doctorModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeDoctorModal()">&times;</span>
+
+        <h2>Add New Doctor</h2>
+
+        <form id="doctorForm">
+
+            <div class="form-group">
+
+                <label>Doctor Name</label>
+
+                <input
+                    type="text"
+                    id="doctorName"
+                    placeholder="Enter Doctor Name"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Specialization</label>
+
+                <input
+                    type="text"
+                    id="doctorSpecialization"
+                    placeholder="Eye Surgeon / Consultant Optometrist"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Degree</label>
+
+                <input
+                    type="text"
+                    id="doctorDegree"
+                    placeholder="Enter Doctor's Degree"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Mobile Number</label>
+
+                <input
+                    type="tel"
+                    id="doctorMobile"
+                    placeholder="Enter Mobile Number"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="doctorEmail"
+                    placeholder="doctor@gmail.com">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Timing</label>
+
+                <input
+                    type="text"
+                    id="doctorTiming"
+                    placeholder="09:00 AM - 06:00 PM">
+
+            </div>
+
+            <button type="submit" class="save-btn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Doctor
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ================= JavaScript ================= -->
+
+<script type="module" src="doctor.js"></script>
+
+<script>
+
+// Today's Date
+document.getElementById("todayDate").innerHTML =
+new Date().toLocaleDateString("en-GB",{
+    day:"2-digit",
+    month:"long",
+    year:"numeric"
+});
+
+// Refresh Button
+document.getElementById("refreshDoctorBtn").onclick=function(){
+
+    location.reload();
+
+};
+
+// Open Modal
+document.getElementById("addDoctorBtn").onclick=function(){
+
+    document.getElementById("doctorModal").style.display="flex";
+
+};
+
+// Close Modal
+function closeDoctorModal(){
+
+    document.getElementById("doctorModal").style.display="none";
+
+}
+
+// Close on Outside Click
+window.onclick=function(e){
+
+    if(e.target==document.getElementById("doctorModal")){
+
+        closeDoctorModal();
+
+    }
+
+};
+
+</script>
+
+</div>
+
+</body>
+</html>

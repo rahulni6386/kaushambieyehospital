@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hospital Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <h2>KEH Admin</h2>
+    </div>
+
+    <ul>
+
+        <li class="active">
+            <a href="#">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="appointments.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Appointments
+            </a>
+        </li>
+
+        <li>
+            <a href="patients.html">
+                <i class="fa-solid fa-user-injured"></i>
+                Patients
+            </a>
+        </li>
+
+        <li>
+            <a href="doctor.html">
+                <i class="fa-solid fa-user-doctor"></i>
+                Doctors
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<h1>Hospital Dashboard</h1>
+
+<div class="admin">
+<i class="fa-solid fa-user"></i>
+Administrator
+</div>
+
+</header>
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h2 id="totalPatients">0</h2>
+<p>Total Patients</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-calendar-day"></i>
+<h2 id="todayAppointments">0</h2>
+<p>Today's Appointments</p>
+</div>
+
+</div>
+
+<!-- Appointment Table -->
+
+<div class="table-box">
+
+    <div class="table-header">
+        <h2>Recent Appointments</h2>
+
+        <input type="text"
+               id="search"
+               placeholder="Search Patient...">
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Mobile</th>
+    <th>Doctor</th>
+    <th>Date/time</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+        </thead>
+
+<tbody id="appointmentTable"></tbody>
+
+    </table>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+
+<!-- Patient Details Modal -->
+
+<div id="patientModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2>Patient Details</h2>
+
+        <div id="patientDetails"></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+    
